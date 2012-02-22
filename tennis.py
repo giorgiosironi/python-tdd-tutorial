@@ -12,6 +12,8 @@ class Set:
         return self.scores.scoreName(self.first)
     def secondScores(self):
         self.second = self.second + 1
+        if (self.second > 3):
+            self.theWinner = 2
     def secondScore(self):
         return self.scores.scoreName(self.second)
     def winner(self):
