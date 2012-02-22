@@ -3,12 +3,12 @@ class Set:
         self.first = 0
         self.second = 0
         self.scores = Scores()
-    def firstScores(self):
-        self.first = self.first + 1
+    def firstScores(self, times=1):
+        self.first = self.first + times
     def firstScore(self):
         return self.scores.scoreName(self.first)
-    def secondScores(self):
-        self.second = self.second + 1
+    def secondScores(self, times=1):
+        self.second = self.second + times
     def secondScore(self):
         return self.scores.scoreName(self.second)
     def winner(self):
