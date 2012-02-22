@@ -10,6 +10,15 @@ class TestSetWinning(TestCase):
         self.assertEqual("0", set.secondScore())
         set.secondScores()
         self.assertEqual("15", set.secondScore())
+    def test_player_win_when_scores_at_40(self):
+        set = Set()
+        set.firstScores()
+        set.firstScores()
+        set.firstScores()
+        self.assertEqual(None, set.winner())
+        set.firstScores()
+        self.assertEqual(1, set.winner())
+
 
 class TestScoreNames(TestCase):
     def test_score_names(self):
