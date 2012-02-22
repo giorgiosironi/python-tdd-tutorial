@@ -3,21 +3,22 @@ class Set:
         self.first = 0
         self.second = 0
         self.scores = Scores()
-        self.theWinner = None
     def firstScores(self):
         self.first = self.first + 1
-        if (self.first > 3):
-            self.theWinner = 1
     def firstScore(self):
         return self.scores.scoreName(self.first)
     def secondScores(self):
         self.second = self.second + 1
-        if (self.second > 3):
-            self.theWinner = 2
     def secondScore(self):
         return self.scores.scoreName(self.second)
     def winner(self):
-        return self.theWinner
+        if (self.first > 3 and self.second < 3):
+            return 1
+        if (self.second > 3 and self.first < 3):
+            return 2
+        if (self.first > 4 and self.second < 4):
+            return 1
+        return None
 
 class Scores:
     def __init__(self):
