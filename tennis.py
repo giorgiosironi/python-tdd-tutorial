@@ -12,15 +12,13 @@ class Set:
     def secondScore(self):
         return self.scores.scoreName(self.second)
     def winner(self):
-        if (self.first > 3 and self.second < 3):
+        if self._isWinning(self.first, self.second):
             return 1
-        if (self.second > 3 and self.first < 3):
-            return 2
-        if (self.first > 4 and self.second < 4):
-            return 1
-        if (self.second > 4 and self.first < 4):
+        if self._isWinning(self.second, self.first):
             return 2
         return None
+    def _isWinning(self, winner, loser):
+        return winner > 3 and winner - loser >= 2
 
 class Scores:
     def __init__(self):
