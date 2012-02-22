@@ -18,6 +18,8 @@ class Set:
             return 2
         if (self.first > 4 and self.second < 4):
             return 1
+        if (self.second > 4 and self.first < 4):
+            return 2
         return None
 
 class Scores:

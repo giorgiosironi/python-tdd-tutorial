@@ -22,7 +22,7 @@ class TestSetWinning(TestCase):
         self.assertEqual(None, set.winner())
         set.secondScores()
         self.assertEqual(2, set.winner())
-    def test_deuce_requires_more_than_one_ball_to_win(self):
+    def test_deuce_requires_1_more_than_one_ball_to_win(self):
         set = Set()
         set.firstScores(3)
         set.secondScores(3)
@@ -30,6 +30,14 @@ class TestSetWinning(TestCase):
         self.assertEqual(None, set.winner())
         set.firstScores()
         self.assertEqual(1, set.winner())
+    def test_deuce_requires_2_more_than_one_ball_to_win(self):
+        set = Set()
+        set.firstScores(3)
+        set.secondScores(3)
+        set.secondScores()
+        self.assertEqual(None, set.winner())
+        set.secondScores()
+        self.assertEqual(2, set.winner())
 
 class TestScoreNames(TestCase):
     def test_score_names(self):
