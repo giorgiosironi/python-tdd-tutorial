@@ -7,6 +7,9 @@ class TestSetWinning(TestCase):
         self.assertEqual("0", set.firstScore())
         set.firstScores()
         self.assertEqual("15", set.firstScore())
+        self.assertEqual("0", set.secondScore())
+        set.secondScores()
+        self.assertEqual("15", set.secondScore())
 
 class TestScoreNames(TestCase):
     def test_score_names(self):
