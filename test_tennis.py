@@ -38,6 +38,18 @@ class TestSetWinning(TestCase):
         self.assertEqual(None, set.winner())
         set.secondScores()
         self.assertEqual(2, set.winner())
+    def test_player_can_return_to_deuce_by_scoring_against_the_others_advantage(self):
+        set = Set()
+        set.firstScores(3)
+        set.secondScores(3)
+        self.assertEqual(None, set.winner())
+        set.firstScores()
+        set.secondScores()
+        set.firstScores()
+        set.secondScores()
+        self.assertEqual(None, set.winner())
+        self.assertEqual("40", set.firstScore())
+        self.assertEqual("40", set.secondScore())
 
 class TestScoreNames(TestCase):
     def test_score_names(self):
