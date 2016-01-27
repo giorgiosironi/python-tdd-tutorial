@@ -1,6 +1,6 @@
-This is an exercise I performed to learn Test-Driven Development in Python.
+This is an exercise I performed to learn Test-Driven Development and unit testing in Python.
 
-== Tennis kata
+## Tennis kata
 
 The first exercise is related to choosing the winner of a tennis game (in particular of a single set).
 
@@ -12,7 +12,7 @@ Run with:
 python -munittest test_tennis
 ```
 
-== Randomness
+## Randomness
 
 The `random` module is tested through the properties of the output it generates (it's not test-driven as it is a standard module provided by the runtime.) For example, sampled elements from a list must belong to the list while shuffling a list should not lose any contained element.
 
